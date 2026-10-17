@@ -377,9 +377,12 @@ export async function convertTgsToGif(inputPath: string): Promise<string> {
   // anything over 10 MB. Shrink and subsample so busy stickers stay under it.
   const sizeLimit = 9_500_000;
   const profiles = [
-    { maxSide: 256, fps: 24, maxFrames: 150 },
-    { maxSide: 192, fps: 16, maxFrames: 120 },
-    { maxSide: 160, fps: 12, maxFrames: 90 },
+    { maxSide: 512, fps: 30, maxFrames: 180 },
+    { maxSide: 448, fps: 24, maxFrames: 150 },
+    { maxSide: 384, fps: 20, maxFrames: 120 },
+    { maxSide: 320, fps: 16, maxFrames: 100 },
+    { maxSide: 256, fps: 12, maxFrames: 80 },
+    { maxSide: 192, fps: 10, maxFrames: 60 },
   ];
 
   for (const [index, profile] of profiles.entries()) {
